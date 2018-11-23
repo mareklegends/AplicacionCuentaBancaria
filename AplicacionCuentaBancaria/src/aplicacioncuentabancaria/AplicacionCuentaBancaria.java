@@ -46,6 +46,8 @@ public class AplicacionCuentaBancaria {
         
             Scanner leer1 = new Scanner(System.in);  
             entidad = leer1.nextInt();
+            
+            
        
                  
         
