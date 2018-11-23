@@ -39,12 +39,16 @@ public class AplicacionCuentaBancaria {
         int saldo=0;    
         
         System.out.println("Dime tu nombre");   
-            Scanner leer = new Scanner(System.in);        
+            Scanner leer = new Scanner(System.in);  
             nombre = leer.nextLine();
         
         System.out.println("Dime tu entidad");
-            Scanner leer1 = new Scanner(System.in);        
+        
+            Scanner leer1 = new Scanner(System.in);  
             entidad = leer1.nextInt();
+       
+                 
+        
         
         System.out.println("Dime tu ofcina");
             Scanner leer2 = new Scanner(System.in);        
