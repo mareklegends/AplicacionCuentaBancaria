@@ -28,6 +28,14 @@ public class AplicacionCuentaBancaria {
         //inicializar el juego
         
         
+        
+           
+        
+      
+        
+       do{
+           
+           
         if (empezar==false) {
             
         System.out.println("<<<<<<<<<<<<>>>>>>>>>>>>");    
@@ -64,14 +72,13 @@ public class AplicacionCuentaBancaria {
         CuentaBancaria nuevacuenta = new CuentaBancaria(nombre, entidad, oficina, digitos_de_control, cuenta, 0);
         
         System.out.println("<<<<<<<<<<<<>>>>>>>>>>>>");
+        empezar = true;
             
             
-        }else if(empezar!=false){
+        }   
            
-        
-      
-        
-       do{
+           
+           
         Scanner leerprincipio = new Scanner(System.in);    
         int nmenu;  
         Menu.mostrarMenu();
@@ -199,7 +206,7 @@ public class AplicacionCuentaBancaria {
         
      
        
-       }
+ 
        
         
     }
