@@ -18,9 +18,12 @@ public class CuentaBancaria {
     private int digitos_de_control;
     private int cuenta;
     
-    private int saldo;
     
     private int ncuenta;
+    
+    
+    private int saldo;   
+    
     
     //añadir una cuenta
 
@@ -32,6 +35,16 @@ public class CuentaBancaria {
         this.cuenta = cuenta;
         this.saldo = saldo;
         ncuenta = entidad + oficina + digitos_de_control + cuenta;
+    }
+    
+    //mostrar en paso1 que es motrar el numero de cuenta completo
+    
+    public String mostrarNCUENTA(){
+        String a="";
+        
+        a+=" " + nombre_titular +" > > "+ ncuenta + "\n";
+        
+        return a;
     }
 
   

@@ -22,9 +22,52 @@ public class AplicacionCuentaBancaria {
         
         
            boolean bandera = true;
+           boolean empezar = false;
       
         
         //inicializar el juego
+        
+        
+        if (empezar==false) {
+            
+        System.out.println("<<<<<<<<<<<<>>>>>>>>>>>>");    
+           
+            
+            
+        String nombre="";
+        int entidad=0;
+        int oficina=0;
+        int digitos_de_control=0;
+        int cuenta=0;
+        int saldo=0;    
+        
+        System.out.println("Dime tu nombre");   
+            Scanner leer = new Scanner(System.in);        
+            nombre = leer.nextLine();
+        
+        System.out.println("Dime tu entidad");
+            Scanner leer1 = new Scanner(System.in);        
+            entidad = leer1.nextInt();
+        
+        System.out.println("Dime tu ofcina");
+            Scanner leer2 = new Scanner(System.in);        
+            oficina = leer2.nextInt();
+        
+        System.out.println("Dime tus digitos de control");
+            Scanner leer3 = new Scanner(System.in);        
+            digitos_de_control = leer3.nextInt();
+        
+        System.out.println("Diem tu número de cuenta");
+            Scanner leer4 = new Scanner(System.in);        
+            cuenta = leer4.nextInt();
+            
+        CuentaBancaria nuevacuenta = new CuentaBancaria(nombre, entidad, oficina, digitos_de_control, cuenta, 0);
+        
+        System.out.println("<<<<<<<<<<<<>>>>>>>>>>>>");
+            
+            
+        }else if(empezar!=false){
+           
         
       
         
@@ -35,14 +78,14 @@ public class AplicacionCuentaBancaria {
         System.out.println("Pulsa un número");
         nmenu = leerprincipio.nextInt(); 
         
-        
+                
         switch(nmenu){
             
             case 1:
                 
                  System.out.println("<<<<<<<<<<<<>>>>>>>>>>>>");
         
-                 
+                 System.out.println("Hola");
                 
                  System.out.println("<<<<<<<<<<<<>>>>>>>>>>>>");
                 
@@ -152,9 +195,12 @@ public class AplicacionCuentaBancaria {
             
         }
            
-       }while(bandera!=false);
+       }while(bandera!=false );
         
-        
+     
+       
+       }
+       
         
     }
     
