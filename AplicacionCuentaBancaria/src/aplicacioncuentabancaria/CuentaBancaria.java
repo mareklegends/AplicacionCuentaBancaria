@@ -13,28 +13,31 @@ public class CuentaBancaria {
     
     private String nombre_titular;
     
-    private int entidad;
-    private int oficina;
-    private int digitos_de_control;
-    private int cuenta;
+    private String entidad;
+    private String oficina;
+    private String digitos_de_control;
+    private String cuenta;
+
+    private String numerocuenta;    
     
-    
-    private int ncuenta;
-    
-    
-    private int saldo;   
+    private double saldo;   
     
     
     //añadir una cuenta
 
-    public CuentaBancaria(String nombre_titular, int entidad, int oficina, int digitos_de_control, int cuenta, int saldo) {
-        this.nombre_titular = nombre_titular;
+    public CuentaBancaria(String nombre_titular, String numerocuenta, double saldo) {
+        
+        if(nombre_titular.length()>19){
+            this.nombre_titular = nombre_titular.substring(0, 19);
+        }else{
+            this.nombre_titular = nombre_titular; 
+        }
+        this.numerocuenta = numerocuenta;
         this.entidad = entidad;
         this.oficina = oficina;
         this.digitos_de_control = digitos_de_control;
         this.cuenta = cuenta;
         this.saldo = saldo;
-        ncuenta = entidad + oficina + digitos_de_control + cuenta;
     }
     
     //mostrar en paso1 que es motrar el numero de cuenta completo
@@ -42,7 +45,15 @@ public class CuentaBancaria {
     public String mostrarNCUENTA(){
         String a="";
         
-        a+=" " + nombre_titular +" > > "+ ncuenta + "\n";
+        a+="\n" + nombre_titular +" > > "+ numerocuenta + "\n";
+        
+        return a;
+    }
+    
+       public String mostrarSALDO(){
+        String a="";
+        
+        a+="\n" + nombre_titular +" > > "+ saldo +"€ \n";
         
         return a;
     }

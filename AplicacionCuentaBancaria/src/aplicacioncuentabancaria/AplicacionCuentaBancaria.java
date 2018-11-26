@@ -21,6 +21,7 @@ public class AplicacionCuentaBancaria {
         
            boolean bandera = true;
            boolean empezar = false;  
+           CuentaBancaria nuevacuenta=null;
         
        do{
            
@@ -32,39 +33,22 @@ public class AplicacionCuentaBancaria {
             
             
         String nombre="";
-        int entidad=0;
-        int oficina=0;
-        int digitos_de_control=0;
-        int cuenta=0;
-        int saldo=0;    
+        String numerocuenta="";
+        double saldo=0.00;    
         
         System.out.println("Dime tu nombre");   
-            Scanner leer = new Scanner(System.in);  
-            nombre = leer.nextLine();
-        
-        System.out.println("Dime tu entidad");
-        
             Scanner leer1 = new Scanner(System.in);  
-            entidad = leer1.nextInt();
-            
-            
-       
-                 
+            nombre = leer1.nextLine();
         
-        
-        System.out.println("Dime tu ofcina");
+        System.out.println("Dime el numero de cuenta");
             Scanner leer2 = new Scanner(System.in);        
-            oficina = leer2.nextInt();
-        
-        System.out.println("Dime tus digitos de control");
-            Scanner leer3 = new Scanner(System.in);        
-            digitos_de_control = leer3.nextInt();
-        
-        System.out.println("Diem tu número de cuenta");
-            Scanner leer4 = new Scanner(System.in);        
-            cuenta = leer4.nextInt();
+            numerocuenta = leer2.nextLine();
             
-        CuentaBancaria nuevacuenta = new CuentaBancaria(nombre, entidad, oficina, digitos_de_control, cuenta, 0);
+        System.out.println("Dime el saldo de la cuenta");
+            Scanner leer3 = new Scanner(System.in);        
+            saldo = leer3.nextDouble();
+            
+        nuevacuenta = new CuentaBancaria(nombre, numerocuenta, saldo);
         
         System.out.println("<<<<<<<<<<<<>>>>>>>>>>>>");
         empezar = true;
@@ -87,7 +71,7 @@ public class AplicacionCuentaBancaria {
                 
                  System.out.println("<<<<<<<<<<<<>>>>>>>>>>>>");
         
-                 System.out.println("Hola");
+                 System.out.println(nuevacuenta.mostrarNCUENTA());
                 
                  System.out.println("<<<<<<<<<<<<>>>>>>>>>>>>");
                 
