@@ -46,7 +46,7 @@ public class CuentaBancaria {
     private void validarCuentaBancaria(){ 
         
         
-     
+     do{
         
             if (this.numerocuenta.length()==20) {
 
@@ -71,7 +71,7 @@ public class CuentaBancaria {
                 
          }
             
-     
+     }while(validarCuenta());
         
     }
     
@@ -179,7 +179,7 @@ public class CuentaBancaria {
            
        }
         
-    private boolean confirmarCuenta(){
+    private boolean validarCuenta(){
         boolean valido=false;
         int resultado=0;
         int codigo1=11;

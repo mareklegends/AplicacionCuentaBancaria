@@ -167,11 +167,7 @@ public class AplicacionCuentaBancaria {
                  Scanner leerdinerosacar = new Scanner(System.in);
                  sacardinero = leerdinerosacar.nextDouble();
                  
-                 nuevacuenta.sacarDINERO(sacardinero);
-                 
-                
-                 
-                 
+                 nuevacuenta.sacarDINERO(sacardinero);   
                 
                  System.out.println("<<<<<<<<<<<<>>>>>>>>>>>>");
                 
