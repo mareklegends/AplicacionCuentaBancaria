@@ -180,7 +180,7 @@ public class CuentaBancaria {
        }
         
     private boolean confirmarCuenta(){
-        boolean confirmado=false;
+        boolean valido=false;
         int resultado=0;
         int codigo1=11;
         int codigo2=11;
@@ -222,11 +222,11 @@ public class CuentaBancaria {
         }
         codigototal=(codigo1*10)+(codigo2);
         if (codigototal==Integer.parseInt(digitos_de_control)) {
-            confirmado=true;
+            valido=true;
         }else{
             this.numerocuenta="";
         }
-        return confirmado;
+        return valido;
     }   
             
           
