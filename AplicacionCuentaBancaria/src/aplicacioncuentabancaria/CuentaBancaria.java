@@ -35,6 +35,7 @@ public class CuentaBancaria {
             this.nombre_titular = nombre_titular; 
         }
         this.numerocuenta = numerocuenta;
+        validarCuentaBancaria();
       
         this.saldo = saldo;
     }
@@ -42,31 +43,31 @@ public class CuentaBancaria {
     
     //validar numero de la cuenta bancaria
     
-    private boolean validarCuentaBancaria(){
-        boolean bandera=false;
-        
-       
+    private void validarCuentaBancaria(){ 
         
             if (this.numerocuenta.length()==20) {
 
                 entidad = numerocuenta.substring(0, 4);
-                oficina = numerocuenta.substring(5, 9);
-                digitos_de_control = numerocuenta.substring(10, 11);
-                cuenta = numerocuenta.substring(12, 20);
-
-                bandera = true;
+                oficina = numerocuenta.substring(4, 8);
+                digitos_de_control = numerocuenta.substring(8, 10);
+                cuenta = numerocuenta.substring(10, 20);
 
             }else{
-                 while ( (this.numerocuenta.length()!=20) && (bandera=false) ) {
-                     System.out.println("Pon los 20 digitos, el número de cuenta noes valido");
-                     Scanner leerdigitos = new Scanner(System.in);
-                     numerocuenta = leerdigitos.nextLine();
-                 }
+                while (this.numerocuenta.length()!=20) {
+                    
+                    System.out.println("Pon los 20 digitos, el número de cuenta noes valido");
+                    Scanner leerdigitos = new Scanner(System.in);
+                    numerocuenta = leerdigitos.nextLine();
+                    
+                }
+                
+                entidad = numerocuenta.substring(0, 4);
+                oficina = numerocuenta.substring(4, 8);
+                digitos_de_control = numerocuenta.substring(8, 10);
+                cuenta = numerocuenta.substring(10, 20);  
+                
         }
         
-        
-        
-        return bandera;
     }
     
     //mostrar en paso1 que es motrar el numero de cuenta completo
@@ -99,6 +100,88 @@ public class CuentaBancaria {
            return titular;
                    
        }
+       
+       //sacar el codigo de entidad
+       
+       public String mostrarEntidad(){
+           String mentidad="";
+           
+           mentidad+="\n" + entidad + "\n";
+           
+           return mentidad;
+                   
+       }
+       
+       //sacar la oficina
+       
+       public String mostrarOficina(){
+           String moficina="";
+           
+           moficina+="\n" + oficina + "\n";
+           
+           return moficina;
+                   
+       }
+       
+             //sacar el ncuenta
+       
+       public String mostrarNumeroCUENTA(){
+           String mncuenta="";
+           
+           mncuenta+="\n" + cuenta + "\n";
+           
+           return mncuenta;
+                   
+       }
+       
+            //sacar los digitos de control
+       
+       public String mostrarNCONTROL(){
+           String mncontrol="";
+           
+           mncontrol+="\n" + digitos_de_control + "\n";
+           
+           return mncontrol;
+                   
+       }
+       
+       //para la realizacion del ingreso
+       public void meterDINERO(double dinero){
+           
+           saldo+=dinero;
+           
+           
+       }
+    
+       //para sacar el dinero
+       
+        public String sacarDINERO(double dinero){
+       
+            String info="";
+            
+            if (dinero>saldo) {
+                saldo-=dinero;
+                info+="Acción hecha con exito";
+                
+            } else {
+               
+                info+="No tienes suficiente dinero";
+             
+            }
+            
+           return info;
+           
+           
+       }
+        
+        
+        public void calcularDigitosControl(){
+            
+            
+            
+            
+            
+        }
     
     
     

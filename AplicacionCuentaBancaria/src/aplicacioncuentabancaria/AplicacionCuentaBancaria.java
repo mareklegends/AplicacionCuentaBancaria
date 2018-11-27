@@ -94,7 +94,7 @@ public class AplicacionCuentaBancaria {
                 
                   System.out.println("<<<<<<<<<<<<>>>>>>>>>>>>");
         
-                 
+                 System.out.println(nuevacuenta.mostrarEntidad());
                 
                  System.out.println("<<<<<<<<<<<<>>>>>>>>>>>>");
                 
@@ -106,7 +106,7 @@ public class AplicacionCuentaBancaria {
                
                  System.out.println("<<<<<<<<<<<<>>>>>>>>>>>>");
         
-                 
+                 System.out.println(nuevacuenta.mostrarOficina());
                 
                  System.out.println("<<<<<<<<<<<<>>>>>>>>>>>>");
                 
@@ -117,7 +117,7 @@ public class AplicacionCuentaBancaria {
                 
                  System.out.println("<<<<<<<<<<<<>>>>>>>>>>>>");
         
-                 
+                 System.out.println(nuevacuenta.mostrarNumeroCUENTA());
                 
                  System.out.println("<<<<<<<<<<<<>>>>>>>>>>>>");
                 
@@ -128,7 +128,7 @@ public class AplicacionCuentaBancaria {
                 
                  System.out.println("<<<<<<<<<<<<>>>>>>>>>>>>");
         
-                 
+                  System.out.println(nuevacuenta.mostrarNCONTROL());
                 
                  System.out.println("<<<<<<<<<<<<>>>>>>>>>>>>");
                 
@@ -138,6 +138,16 @@ public class AplicacionCuentaBancaria {
             case 7:
                 
                  System.out.println("<<<<<<<<<<<<>>>>>>>>>>>>");
+                 
+                 double meterdinero;
+                 
+                 System.out.println("¿Cuanto dinero quieres añadir a tu cuenta?");
+                 Scanner leerdinero = new Scanner(System.in);
+                 meterdinero = leerdinero.nextDouble();
+                 
+                 nuevacuenta.meterDINERO(meterdinero);
+                 
+                 System.out.println("Se ha añadido a su cuenta.");
         
                  
                 
@@ -149,7 +159,18 @@ public class AplicacionCuentaBancaria {
             case 8:
                 
                   System.out.println("<<<<<<<<<<<<>>>>>>>>>>>>");
-        
+                  
+                  
+                  double sacardinero;
+                 
+                 System.out.println("¿Cuanto dinero quieres sacar a tu cuenta?");
+                 Scanner leerdinerosacar = new Scanner(System.in);
+                 sacardinero = leerdinerosacar.nextDouble();
+                 
+                 nuevacuenta.sacarDINERO(sacardinero);
+                 
+                
+                 
                  
                 
                  System.out.println("<<<<<<<<<<<<>>>>>>>>>>>>");
