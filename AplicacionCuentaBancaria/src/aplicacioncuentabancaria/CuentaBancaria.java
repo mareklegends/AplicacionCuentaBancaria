@@ -45,6 +45,9 @@ public class CuentaBancaria {
     
     private void validarCuentaBancaria(){ 
         
+        
+     
+        
             if (this.numerocuenta.length()==20) {
 
                 entidad = numerocuenta.substring(0, 4);
@@ -66,7 +69,9 @@ public class CuentaBancaria {
                 digitos_de_control = numerocuenta.substring(8, 10);
                 cuenta = numerocuenta.substring(10, 20);  
                 
-        }
+         }
+            
+     
         
     }
     
@@ -174,31 +179,60 @@ public class CuentaBancaria {
            
        }
         
-      public void calcularDigitosControl(){
-        int nument1=0, nument2=0, nument3=0, nument4=0;      
-        int numeofi1=0, numeofi2=0, numeofi3=0, numeofi4=0;    
-        
-            for (int i = 0; i < entidad.length(); i++) {
-                nument1 =  Integer.getInteger(entidad.substring(0, 1)) * 4;
-                nument2 =  Integer.getInteger(entidad.substring(1, 2)) * 8; 
-                nument3 =  Integer.getInteger(entidad.substring(2, 3)) * 5;
-                nument4 =  Integer.getInteger(entidad.substring(3, 4)) * 10;
-            
-              }
-        
-            for (int j = 0; j < oficina.length(); j++) {
-            numeofi1 = Integer.getInteger(oficina.substring(0, 1)) * 9;
-            numeofi2 = Integer.getInteger(oficina.substring(1, 2)) * 7;
-            numeofi3 = Integer.getInteger(oficina.substring(2, 3)) * 3;
-            numeofi4 = Integer.getInteger(oficina.substring(3, 4)) * 6;
-    
-            }
-            
+    private boolean confirmarCuenta(){
+        boolean confirmado=false;
+        int resultado=0;
+        int codigo1=11;
+        int codigo2=11;
+        int codigototal=0;
+       resultado+=(Integer.parseInt(entidad.substring(0,1))*4); 
+       resultado+=(Integer.parseInt(entidad.substring(1,2))*8); 
+       resultado+=(Integer.parseInt(entidad.substring(2,3))*5); 
+       resultado+=(Integer.parseInt(entidad.substring(3,4))*10); 
+       resultado+=(Integer.parseInt(entidad.substring(0,1))*9);
+       resultado+=(Integer.parseInt(entidad.substring(1,2))*7);
+       resultado+=(Integer.parseInt(entidad.substring(2,3))*3);
+       resultado+=(Integer.parseInt(entidad.substring(3,4))*6);
+       resultado=resultado%11;
+       codigo1-=resultado;
+        if (codigo1==10) {
+            codigo1=1;
+        }
+        if (codigo1==11) {
+            codigo1=0;
+        }
+        resultado=0;
+        resultado+=(Integer.parseInt(cuenta.substring(0,1))*1);
+        resultado+=(Integer.parseInt(cuenta.substring(1,2))*2);
+        resultado+=(Integer.parseInt(cuenta.substring(2,3))*4);
+        resultado+=(Integer.parseInt(cuenta.substring(3,4))*8);
+        resultado+=(Integer.parseInt(cuenta.substring(4,5))*5);
+        resultado+=(Integer.parseInt(cuenta.substring(5,6))*10);
+        resultado+=(Integer.parseInt(cuenta.substring(6,7))*9);
+        resultado+=(Integer.parseInt(cuenta.substring(7,8))*7);
+        resultado+=(Integer.parseInt(cuenta.substring(8,9))*3);
+        resultado+=(Integer.parseInt(cuenta.substring(9,10))*6);
+        resultado=resultado%11;
+        codigo2-=resultado;
+          if (codigo2==10) {
+            codigo2=1;
+        }
+        if (codigo2==11) {
+            codigo2=0;
+        }
+        codigototal=(codigo1*10)+(codigo2);
+        if (codigototal==Integer.parseInt(digitos_de_control)) {
+            confirmado=true;
+        }else{
+            this.cuenta="";
+        }
+        return confirmado;
+    }   
             
           
             
             
-     }
+  
     
     
     
