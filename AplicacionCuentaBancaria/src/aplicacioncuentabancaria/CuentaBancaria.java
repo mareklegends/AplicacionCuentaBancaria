@@ -5,6 +5,8 @@
  */
 package aplicacioncuentabancaria;
 
+import java.util.Scanner;
+
 /**
  *
  * @author alumno
@@ -33,30 +35,33 @@ public class CuentaBancaria {
             this.nombre_titular = nombre_titular; 
         }
         this.numerocuenta = numerocuenta;
-        this.entidad = entidad;
-        this.oficina = oficina;
-        this.digitos_de_control = digitos_de_control;
-        this.cuenta = cuenta;
+      
         this.saldo = saldo;
     }
     
     
     //validar numero de la cuenta bancaria
     
-    public boolean validarCuentaBancaria(){
+    private boolean validarCuentaBancaria(){
         boolean bandera=false;
         
-        if (numerocuenta.length()==20) {
-            
-            entidad = numerocuenta.substring(0, 4);
-            oficina = numerocuenta.substring(5, 9);
-            digitos_de_control = numerocuenta.substring(10, 11);
-            cuenta = numerocuenta.substring(12, 20);
-            
-            bandera = true;
-            
-        }else{
-            bandera=false;
+       
+        
+            if (numerocuenta.length()==20) {
+
+                entidad = numerocuenta.substring(0, 4);
+                oficina = numerocuenta.substring(5, 9);
+                digitos_de_control = numerocuenta.substring(10, 11);
+                cuenta = numerocuenta.substring(12, 20);
+
+                bandera = true;
+
+            }else{
+                 while ( (numerocuenta.length()!=20) && (bandera=false) ) {
+                     System.out.println("Pon los 20 digitos");
+                     Scanner leerdigitos = new Scanner(System.in);
+                     numerocuenta = leerdigitos.nextLine();
+                 }
         }
         
         

@@ -43,6 +43,7 @@ public class AplicacionCuentaBancaria {
         System.out.println("Dime el numero de cuenta");
             Scanner leer2 = new Scanner(System.in);        
             numerocuenta = leer2.nextLine();
+           
             
         System.out.println("Dime el saldo de la cuenta");
             Scanner leer3 = new Scanner(System.in);        
