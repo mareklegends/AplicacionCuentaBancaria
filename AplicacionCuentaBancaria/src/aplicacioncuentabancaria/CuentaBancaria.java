@@ -47,7 +47,7 @@ public class CuentaBancaria {
         
        
         
-            if (numerocuenta.length()==20) {
+            if (this.numerocuenta.length()==20) {
 
                 entidad = numerocuenta.substring(0, 4);
                 oficina = numerocuenta.substring(5, 9);
@@ -57,8 +57,8 @@ public class CuentaBancaria {
                 bandera = true;
 
             }else{
-                 while ( (numerocuenta.length()!=20) && (bandera=false) ) {
-                     System.out.println("Pon los 20 digitos");
+                 while ( (this.numerocuenta.length()!=20) && (bandera=false) ) {
+                     System.out.println("Pon los 20 digitos, el número de cuenta noes valido");
                      Scanner leerdigitos = new Scanner(System.in);
                      numerocuenta = leerdigitos.nextLine();
                  }
