@@ -224,7 +224,7 @@ public class CuentaBancaria {
         if (codigototal==Integer.parseInt(digitos_de_control)) {
             confirmado=true;
         }else{
-            this.cuenta="";
+            this.numerocuenta="";
         }
         return confirmado;
     }   
