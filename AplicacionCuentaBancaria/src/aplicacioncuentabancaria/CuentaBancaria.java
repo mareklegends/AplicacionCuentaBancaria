@@ -40,6 +40,30 @@ public class CuentaBancaria {
         this.saldo = saldo;
     }
     
+    
+    //validar numero de la cuenta bancaria
+    
+    public boolean validarCuentaBancaria(){
+        boolean bandera=false;
+        
+        if (numerocuenta.length()==20) {
+            
+            entidad = numerocuenta.substring(0, 4);
+            oficina = numerocuenta.substring(5, 9);
+            digitos_de_control = numerocuenta.substring(10, 11);
+            cuenta = numerocuenta.substring(12, 20);
+            
+            bandera = true;
+            
+        }else{
+            bandera=false;
+        }
+        
+        
+        
+        return bandera;
+    }
+    
     //mostrar en paso1 que es motrar el numero de cuenta completo
     
     public String mostrarNCUENTA(){
@@ -50,6 +74,8 @@ public class CuentaBancaria {
         return a;
     }
     
+    //sacar el saldo de la cuenta
+    
        public String mostrarSALDO(){
         String a="";
         
@@ -58,7 +84,16 @@ public class CuentaBancaria {
         return a;
     }
 
-  
+  //sacar el titular de la cuenta
+       
+       public String mostrarTitular(){
+           String titular="";
+           
+           titular+="\n" + nombre_titular + "\n";
+           
+           return titular;
+                   
+       }
     
     
     

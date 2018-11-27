@@ -82,7 +82,7 @@ public class AplicacionCuentaBancaria {
                 
                  System.out.println("<<<<<<<<<<<<>>>>>>>>>>>>");
         
-                 
+                 System.out.println(nuevacuenta.mostrarTitular());
                 
                  System.out.println("<<<<<<<<<<<<>>>>>>>>>>>>");
                 
@@ -161,7 +161,7 @@ public class AplicacionCuentaBancaria {
                
                 System.out.println("<<<<<<<<<<<<>>>>>>>>>>>>");
         
-                 
+                  System.out.println(nuevacuenta.mostrarSALDO());
                 
                  System.out.println("<<<<<<<<<<<<>>>>>>>>>>>>");
                 
