@@ -174,14 +174,31 @@ public class CuentaBancaria {
            
        }
         
+      public void calcularDigitosControl(){
+        int nument1=0, nument2=0, nument3=0, nument4=0;      
+        int numeofi1=0, numeofi2=0, numeofi3=0, numeofi4=0;    
         
-        public void calcularDigitosControl(){
+            for (int i = 0; i < entidad.length(); i++) {
+                nument1 =  Integer.getInteger(entidad.substring(0, 1)) * 4;
+                nument2 =  Integer.getInteger(entidad.substring(1, 2)) * 8; 
+                nument3 =  Integer.getInteger(entidad.substring(2, 3)) * 5;
+                nument4 =  Integer.getInteger(entidad.substring(3, 4)) * 10;
+            
+              }
+        
+            for (int j = 0; j < oficina.length(); j++) {
+            numeofi1 = Integer.getInteger(oficina.substring(0, 1)) * 9;
+            numeofi2 = Integer.getInteger(oficina.substring(1, 2)) * 7;
+            numeofi3 = Integer.getInteger(oficina.substring(2, 3)) * 3;
+            numeofi4 = Integer.getInteger(oficina.substring(3, 4)) * 6;
+    
+            }
             
             
+          
             
             
-            
-        }
+     }
     
     
     
